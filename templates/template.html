@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Navigator</title>
+</head>
+<body>
+{% if search_term %}
+    <h1>{{search_term}}</h1>
+{% else %}
+    <h1>No term!</h1>
+{% endif %}
+{% for item in items %}
+    <h2>{{loop.index}}. {{item.name}}</h2>
+    <h3> Created {{item.created_at}}</h3>
+    <a href="{{item.owner.url}}"><img src="{{item.owner.avatar_url}}" alt="avatar" height="42" width="42"/></a>
+    {{item.owner.login}}
+{% endfor %}
+</body>
+</html>
