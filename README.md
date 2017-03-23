@@ -30,3 +30,11 @@ python github_navigator/application.py
 ```
 
 5) open a browser and go to localhost:9876/navigator?search_term=arrow
+
+TODO:
+
+- fetch the missing datas concerning the repository last commit that did not came from the initial search response 
+{sha} {commit_message}  {commit_author_name}
+
+- paginate the results
+- create authenticated requests to the github API and increase the Rate Limit to get the last commit for each repository
