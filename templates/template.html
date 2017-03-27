@@ -15,16 +15,15 @@
     <a href="{{item.owner.url}}"><img src="{{item.owner.avatar_url}}" alt="avatar" height="42" width="42"/></a>
     {{item.owner.login}}
     <h3>LastCommit</h3>
-     and item.commit.message and item.commit.commit.author.name %}
         <p>
             {% if item.commit.sha %}
-                <span>{{item.commit.sha}}</span><br/>
+                <span>Sha: {{item.commit.sha}}</span><br/>
             {% endif %}
             {% if item.commit.commit.message %}
-                <span>{{item.commit.commit.message}}</span><br/>
+                <span>Message: {{item.commit.commit.message}}</span><br/>
             {% endif %}
-            {% if item.commit.commit.message %}
-                <span>{{item.commit.commit.message}}</span><br/>
+            {% if item.commit.commit.author.name %}
+                <span>Author: {{item.commit.commit.author.name}}</span><br/>
             {% endif %}
         </p>
     {% if item.commit.error %}
