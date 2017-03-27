@@ -33,8 +33,5 @@ python github_navigator/application.py
 
 TODO:
 
-- fetch the missing datas concerning the repository last commit that did not came from the initial search response 
-{sha} {commit_message}  {commit_author_name}
-
 - paginate the results
-- create authenticated requests to the github API and increase the Rate Limit to get the last commit for each repository
+- make async requests
