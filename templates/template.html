@@ -14,6 +14,16 @@
     <h3> Created {{item.created_at}}</h3>
     <a href="{{item.owner.url}}"><img src="{{item.owner.avatar_url}}" alt="avatar" height="42" width="42"/></a>
     {{item.owner.login}}
+    <h3>LastCommit</h3>
+    {% if item.commit.sha and item.commit.message and item.commit.author.name %}
+        <p>{{item.commit.sha}} {{item.commit.message}}  {{item.commit.author.name}}</p>
+    {% elif item.commit.error %}
+        <p>Could not fetch additional info: {{item.commit.error}}</p>
+    {% else %}
+        <p>Could not fetch additional info</p>
+    {% endif %}
+
+    <hr/>
 {% endfor %}
 </body>
 </html>
