@@ -15,12 +15,20 @@
     <a href="{{item.owner.url}}"><img src="{{item.owner.avatar_url}}" alt="avatar" height="42" width="42"/></a>
     {{item.owner.login}}
     <h3>LastCommit</h3>
-    {% if item.commit.sha and item.commit.message and item.commit.author.name %}
-        <p>{{item.commit.sha}} {{item.commit.message}}  {{item.commit.author.name}}</p>
-    {% elif item.commit.error %}
+     and item.commit.message and item.commit.commit.author.name %}
+        <p>
+            {% if item.commit.sha %}
+                <span>{{item.commit.sha}}</span><br/>
+            {% endif %}
+            {% if item.commit.commit.message %}
+                <span>{{item.commit.commit.message}}</span><br/>
+            {% endif %}
+            {% if item.commit.commit.message %}
+                <span>{{item.commit.commit.message}}</span><br/>
+            {% endif %}
+        </p>
+    {% if item.commit.error %}
         <p>Could not fetch additional info: {{item.commit.error}}</p>
-    {% else %}
-        <p>Could not fetch additional info</p>
     {% endif %}
 
     <hr/>
